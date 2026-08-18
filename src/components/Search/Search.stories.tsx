@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { Search } from './Search';
 
 const meta: Meta<typeof Search> = {
@@ -9,6 +10,7 @@ const meta: Meta<typeof Search> = {
     placeholder: 'Search…',
     value: '',
   },
+  render: controlledRender(Search, { onChangeKey: 'onChangeText' }),
 };
 
 export default meta;

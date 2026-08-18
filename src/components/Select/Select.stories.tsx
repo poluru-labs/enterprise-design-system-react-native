@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { Select } from './Select';
 
 const meta: Meta<typeof Select> = {
@@ -15,6 +16,7 @@ const meta: Meta<typeof Select> = {
     ],
     value: 'us',
   },
+  render: controlledRender(Select),
 };
 
 export default meta;

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { DateRangePicker } from './DateRangePicker';
 
 const meta: Meta<typeof DateRangePicker> = {
@@ -9,8 +10,11 @@ const meta: Meta<typeof DateRangePicker> = {
     start: '2026-07-01',
     end: '2026-07-22',
     label: 'Range',
-    onChange: () => undefined,
   },
+  render: controlledRender(DateRangePicker, {
+    onChangeKey: 'onChange',
+    mapChange: (next) => next as { start: string; end: string },
+  }),
 };
 
 export default meta;

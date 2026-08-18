@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { useArgs } from '@storybook/preview-api';
 import { TreeView } from './TreeView';
 
 const meta: Meta<typeof TreeView> = {
@@ -11,6 +12,23 @@ const meta: Meta<typeof TreeView> = {
       { id: '2', label: 'docs' },
     ],
     expandedIds: ['1'],
+  },
+  render: function Render(args) {
+    const [, setArgs] = useArgs();
+    return (
+      <TreeView
+        {...args}
+        onToggle={(id, expanded) => {
+          args.onToggle?.(id, expanded);
+          const current = args.expandedIds ?? [];
+          setArgs({
+            expandedIds: expanded
+              ? [...current, id]
+              : current.filter((item) => item !== id),
+          });
+        }}
+      />
+    );
   },
 };
 

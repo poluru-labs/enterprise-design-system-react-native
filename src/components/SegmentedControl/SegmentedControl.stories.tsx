@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { SegmentedControl } from './SegmentedControl';
 
 const meta: Meta<typeof SegmentedControl> = {
@@ -7,13 +8,13 @@ const meta: Meta<typeof SegmentedControl> = {
   tags: ['autodocs'],
   args: {
     value: 'day',
-    onValueChange: () => undefined,
     options: [
       { value: 'day', label: 'Day' },
       { value: 'week', label: 'Week' },
       { value: 'month', label: 'Month' },
     ],
   },
+  render: controlledRender(SegmentedControl),
 };
 
 export default meta;

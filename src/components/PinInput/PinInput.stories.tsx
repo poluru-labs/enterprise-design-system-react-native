@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { PinInput } from './PinInput';
 
 const meta: Meta<typeof PinInput> = {
@@ -10,6 +11,7 @@ const meta: Meta<typeof PinInput> = {
     length: 4,
     value: '',
   },
+  render: controlledRender(PinInput, { onChangeKey: 'onChange' }),
 };
 
 export default meta;

@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { Slider } from './Slider';
 
 const meta: Meta<typeof Slider> = {
@@ -12,6 +13,7 @@ const meta: Meta<typeof Slider> = {
     max: 100,
     showValue: true,
   },
+  render: controlledRender(Slider),
 };
 
 export default meta;

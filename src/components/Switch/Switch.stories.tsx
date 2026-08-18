@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { Switch } from './Switch';
 
 const meta: Meta<typeof Switch> = {
@@ -9,6 +10,10 @@ const meta: Meta<typeof Switch> = {
     label: 'Notifications',
     checked: true,
   },
+  render: controlledRender(Switch, {
+    valueKey: 'checked',
+    onChangeKey: 'onCheckedChange',
+  }),
 };
 
 export default meta;

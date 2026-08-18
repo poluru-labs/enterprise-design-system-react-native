@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { Accordion } from './Accordion';
 
 const meta: Meta<typeof Accordion> = {
@@ -13,6 +14,7 @@ const meta: Meta<typeof Accordion> = {
       { id: 'b', title: 'Themes', content: 'Light and dark semantic tokens.' },
     ],
   },
+  render: controlledRender(Accordion),
 };
 
 export default meta;

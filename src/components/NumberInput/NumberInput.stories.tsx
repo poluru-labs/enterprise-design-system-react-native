@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { NumberInput } from './NumberInput';
 
 const meta: Meta<typeof NumberInput> = {
@@ -11,6 +12,7 @@ const meta: Meta<typeof NumberInput> = {
     min: 0,
     max: 10,
   },
+  render: controlledRender(NumberInput),
 };
 
 export default meta;

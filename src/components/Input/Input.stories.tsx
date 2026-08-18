@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { Input } from './Input';
 
 const meta: Meta<typeof Input> = {
@@ -10,6 +11,7 @@ const meta: Meta<typeof Input> = {
     placeholder: 'you@company.com',
     icon: 'mail',
   },
+  render: controlledRender(Input, { onChangeKey: 'onChangeText' }),
 };
 
 export default meta;

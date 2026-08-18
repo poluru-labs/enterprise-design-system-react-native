@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { Rating } from './Rating';
 
 const meta: Meta<typeof Rating> = {
@@ -8,8 +9,8 @@ const meta: Meta<typeof Rating> = {
   args: {
     value: 3,
     max: 5,
-    onValueChange: () => undefined,
   },
+  render: controlledRender(Rating),
 };
 
 export default meta;

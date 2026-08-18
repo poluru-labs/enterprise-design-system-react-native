@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { Combobox } from './Combobox';
 
 const meta: Meta<typeof Combobox> = {
@@ -14,6 +15,7 @@ const meta: Meta<typeof Combobox> = {
     ],
     value: 'rn',
   },
+  render: controlledRender(Combobox),
 };
 
 export default meta;

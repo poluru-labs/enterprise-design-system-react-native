@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { Checkbox } from './Checkbox';
 
 const meta: Meta<typeof Checkbox> = {
@@ -9,6 +10,10 @@ const meta: Meta<typeof Checkbox> = {
     label: 'Accept terms',
     checked: true,
   },
+  render: controlledRender(Checkbox, {
+    valueKey: 'checked',
+    onChangeKey: 'onCheckedChange',
+  }),
 };
 
 export default meta;

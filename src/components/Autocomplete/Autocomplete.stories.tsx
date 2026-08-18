@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react';
+import { controlledRender } from '../../../.storybook/controlled';
 import { Autocomplete } from './Autocomplete';
 
 const meta: Meta<typeof Autocomplete> = {
@@ -10,6 +11,7 @@ const meta: Meta<typeof Autocomplete> = {
     value: '',
     suggestions: ['Austin', 'Atlanta', 'Boston', 'Chicago'],
   },
+  render: controlledRender(Autocomplete, { onChangeKey: 'onChangeText' }),
 };
 
 export default meta;
